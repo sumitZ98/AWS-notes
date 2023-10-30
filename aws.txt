@@ -1,0 +1,107 @@
+EC2 instance(they are mainly virtual machines) types::
+(Amazon elastic compute cloud)
+
+Amazon EC2 instance families:
+1.General purpose :-	General purpose instances provide a balance of compute, memory and networking resources, and can be used for a variety of diverse workloads. These instances are ideal for applications that use these resources in equal proportions such as web servers and code repositories.
+2.compute optimised :-Compute optimized instances are ideal for compute intensive tasks like gaming service, high performance computing, or HPC, and even scientific modeling.
+3.memory optimised :-  memory optimized instances are good for memory intensive tasks. e.g. encoding a video
+4.accelarated computing :-  Accelerated computing, are good for floating point number calculations, graphics processing, or data pattern matching, as they use hardware accelerators. 
+5.storage optimised :- Workloads that require high performance for locally stored data
+
+. When selecting an instance type, consider the specific needs of your workloads and applications. This might include requirements for compute, memory, or storage capabilities.
+
+EC2 pricing options
+1. on demand
+2. savings plan
+3. reserved instances.
+4. spot intances
+5. Dedicated Hosts
+
+**Difference between savings plan and reserved intances:
+
+ The primary difference between AWS Reserved Instances and Savings Plan is that Reserved Instances are based on a commitment to use a specific instance type at a fixed price for a specified period, while Savings Plans are based on a commitment to spend a specific dollar amount per hour on any EC2 instance type over a specific period.
+
+
+AWS provide scalability and elasticity..
+
+Scalability involves beginning with only the resources you need and designing your architecture to automatically respond to changing demand by scaling out or in. As a result, you pay for only the resources you use. You don’t have to worry about a lack of computing capacity to meet your customers’ needs.
+
+
+if we want to process the scale automatically 
+we'll use AWS EC2 auto scaling
+
+auto scaling two types -- 
+1.dynamic scaling 
+2. predictive scaling
+
+scaling includes increase the size of the instance along with 
+or increasing the number of instances.
+
+Load balancing:
+if there are multiple instances so each and every
+instances get work load.
+that is not a single instance handle all the work 
+while other instances sits idle.
+
+we can handle this sort of situation using 
+Property distribute traffic::
+it is high performance , cost efficient ,
+ highly available and automatically scalable.
+
+which is done by ELASTIC LOAD BALANCING.(ELB)
+it hepls tp adjuct traffic according to our need 
+if traffic increases ELB manages accordingly and if
+its need scaling it scaless the instances.
+
+with the help of ELB we achieve true decoupled architecture.
+
+
+Messaging and queueing::
+
+1.tightly coupled architecture(monolothic application) : when application communicate directly between them.
+ 
+if a problem  happens then then it will affect the 
+whole system which is not good.
+causing failure.
+
+normally we prefer loosely coupled architecture as in case of a single failure it wont
+cause cascading failures.
+
+loosely coupled architecture(microservices) can be achieved by using
+two of these EC2 services:
+1. Amazon simple queue services (Amazon SQS)
+2. Amazon Simple notification service(Amazon SNS)
+
+SQS:
+this allows the following things:
+send message
+Store message
+receive messages
+between software components at any volume 
+withput losing nay messages.
+
+**Data contain within a message is called a payload.
+(it is protected untill delivery).
+
+SNS: its same as the SQS but it send notification 
+message when it is completed.
+
+SNS topic : a channel for message to be delivered.
+
+EC2 instances are mainly virtual machines.
+
+AWS serverless compute options: 1.AWS lambda(it is used for quick processing < 15min)
+
+2. Amazon Elastic Container Service(ECS)
+3. Amazon Elastic Kubernetes Service(EKS)
+
+
+
+***********************
+AWS fargate**
+
+************************
+
+In AWS, you can also build and run containerized applications.
+
+Containers provide you with a standard way to package your application's code and dependencies into a single object. You can also use containers for processes and workflows in which there are essential requirements for security, reliability, and scalability.
